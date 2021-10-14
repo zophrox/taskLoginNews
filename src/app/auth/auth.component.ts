@@ -27,14 +27,9 @@ export class AuthComponent implements OnDestroy {
     if (!form.valid) {
       return;
     }
-    let email = form.value.name;
+    let email = form.value.email;
     let password = form.value.password;
-    if(email === 'admin'){
-      email = "admin@admin.com"
-    }
-    if(password === "12345"){
-      password = "123456"
-    }
+    
     this.isLoading = true;
     this.authService.signip(email, password).subscribe(
       (resData) => {
