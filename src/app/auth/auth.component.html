@@ -7,15 +7,15 @@
     </div>
     <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
       <div class="form-group">
-        <label for="email">Name</label>
+        <label for="name">Name</label>
         <input
           type="text"
-          id="email"
+          id="name"
           class="form-control"
           ngModel
-          name="email"
+          name="name"
           required
-          email
+          
         />
       </div>
       <div class="form-group">
