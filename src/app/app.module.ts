@@ -13,6 +13,7 @@ import { NewsComponent } from './news/news.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoadingSpinerComponent } from './loading-spiner/loading-spiner.component';
 import { AuthComponent } from './auth/auth.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AuthComponent } from './auth/auth.component';
     NewsComponent,
     LoadingSpinerComponent,
     AuthComponent,
+    AlertComponent,
   
   ],
   imports: [

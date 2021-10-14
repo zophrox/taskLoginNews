@@ -7,7 +7,7 @@ import {
   UrlTree,
 } from "@angular/router";
 import { Observable } from "rxjs";
-import { map, tap } from "rxjs/operators";
+import { map  } from "rxjs/operators";
 import { AuthService } from "./auth.sevice";
 @Injectable({ providedIn: "root" })
 export class AuthGuard implements CanActivate {
@@ -29,11 +29,7 @@ export class AuthGuard implements CanActivate {
         }
         return this.router.createUrlTree(["/auth"]);
       })
-      //   tap((isAuth) => {
-      //     if (!isAuth) {
-      //       this.router.navigate(["/auth"]);
-      //     }
-      //   })
+    
     );
   }
 }
