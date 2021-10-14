@@ -26,6 +26,7 @@ import { PlaceholderDirective } from './placeholder/placeholder.directive';
     LoadingSpinerComponent,
     AuthComponent,
     AlertComponent,
+    PlaceholderDirective
   
   ],
   imports: [
@@ -33,10 +34,10 @@ import { PlaceholderDirective } from './placeholder/placeholder.directive';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
-    PlaceholderDirective
+    ReactiveFormsModule
    ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AlertComponent]
 })
 export class AppModule { }

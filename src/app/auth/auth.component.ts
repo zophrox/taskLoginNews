@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AlertComponent } from '../alert/alert.component';
+import { PlaceholderDirective } from '../placeholder/placeholder.directive';
 import { AuthService } from './auth.sevice';
 
 @Component({
@@ -36,7 +37,6 @@ export class AuthComponent implements OnDestroy {
         this.router.navigate(['/profile']);
       },
       (errorMessage) => {
-        console.log(errorMessage);
         this.error = errorMessage;
         this.showErrorAlert(errorMessage)
         this.isLoading = false;
@@ -45,7 +45,7 @@ export class AuthComponent implements OnDestroy {
     form.reset();
   }
 
-  onDestroy(){
+  ngOnDestroy(){
     if (this.closeSub) {
       this.closeSub.unsubscribe();
     }
@@ -62,7 +62,6 @@ export class AuthComponent implements OnDestroy {
       this.closeSub.unsubscribe();
       hostViewContainerRef.clear();
     });
-  // onHandleError() {
-  //   this.error = null;
-  // }
+  }
+
 }
