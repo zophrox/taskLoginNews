@@ -7,12 +7,11 @@ import { AuthService } from './auth.sevice';
   selector: 'app-auth',
   templateUrl: './auth.component.html',
 })
-export class AuthComponent{
+export class AuthComponent {
   isLoading: boolean = false;
   error: string = null;
 
-  constructor(private authService: AuthService,
-    private router:Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit(form: NgForm) {
     if (!form.valid) {
@@ -25,16 +24,18 @@ export class AuthComponent{
       (resData) => {
         console.log(resData);
         this.isLoading = false;
-        this.router.navigate(['/profile']) 
+        this.router.navigate(['/profile']);
       },
       (errorMessage) => {
         console.log(errorMessage);
         this.error = errorMessage;
-        
+
         this.isLoading = false;
       }
     );
     form.reset();
   }
-
+  onHandleError() {
+    this.error = null;
+  }
 }
